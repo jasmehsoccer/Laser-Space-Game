@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "EnemyWaveConfig")]
-public class WaveConfig : ScriptableObject
+public class waveConfig : ScriptableObject
 {
     [SerializeField] GameObject enemyShip;
     [SerializeField] GameObject pathPrefab;
     [SerializeField] float spawnWait = 0.5f;
     [SerializeField] float randomSpawn = 0.3f;
     [SerializeField] int numSpawn = 8;
-    [SerializeField] float moveSpeedSpawn = 2f;
+    [SerializeField] float moveSpeed = 2f;
     public GameObject GetEnemyPrefab()
     {
         return enemyShip;
@@ -42,9 +42,9 @@ public class WaveConfig : ScriptableObject
     {
         return numSpawn;
     }
-    public float GetMoveSpeedSpawn()
+    public float GetMoveSpeed()
     {
-        return moveSpeedSpawn;
+        return moveSpeed;
     }
 
     // Start is called before the first frame update
