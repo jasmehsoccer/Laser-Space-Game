@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WaveConfig
   enemyShip: {fileID: 926477187695422611, guid: 3850a918b82102f44adb64b301a4d46c, type: 3}
   pathPrefab: {fileID: 8377629555677644070, guid: 0cc02a4c14b8fda4285fb2eecb4f8ecb, type: 3}
-  spawnWait: 0.5
+  spawnWait: 3
   randomSpawn: 0.3
   numSpawn: 8
   moveSpeed: 2

@@ -32,7 +32,7 @@ public class EnemyPathing: MonoBehaviour
         {
             var targetPosition = waypoint[waypointIndex].transform.position;// Used to set the destination for the ship
             var movementThisFrame = waveConfig.GetMoveSpeed()*Time.deltaTime; // Used to make the framework consistent
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, movementThisFrame);// Move ship from current position to the next position at a certain speed.
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementThisFrame);// Move ship from current position to the next position at a certain speed.
             if (transform.position == targetPosition) // Used to add to the Index to put ship on the next destination
             {
                 waypointIndex++;
