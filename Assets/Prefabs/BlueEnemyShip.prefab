@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 926477187695422614}
   - component: {fileID: 688820939988795869}
   - component: {fileID: 8794103289507575814}
+  - component: {fileID: -1202825715435264409}
   m_Layer: 0
   m_Name: BlueEnemyShip
   m_TagString: Untagged
@@ -268,3 +269,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-1202825715435264409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926477187695422611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e1f3113b6853f43bc1a743b248dcd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hit_effect: {fileID: 4291740924240736112, guid: a6d0133f03d1ed34ab824e79960d6ece, type: 3}
+  explosion_effect: {fileID: 0}
