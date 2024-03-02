@@ -17,9 +17,19 @@ public class dealingDamage : MonoBehaviour
 
         
         }
-       
-           
-    
+        if(collision.TryGetComponent<Veffects>(out Veffects v_component))
+        {
+            v_component.play_hit();
+
+        }
+        if (collision.TryGetComponent<Seffects>(out Seffects s_component))
+        {
+            s_component.play_sound_effect();
+
+        }
+
+
+
     }
 
 }

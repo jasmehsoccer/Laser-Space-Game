@@ -36,7 +36,10 @@ public class Health : MonoBehaviour
         {
             onDie?.Invoke(this, EventArgs.Empty);//Invoking an event. Asking Has this event been activated.
 
+
         }
+
+        
     }
 
 }
