@@ -26,18 +26,14 @@ public class Health : MonoBehaviour
     {
         if (health <= 0)
         {
+            onDie?.Invoke(this, EventArgs.Empty);//Invoking an event. Asking Has this event been activated.
             Destroy(gameObject);// Give control back to the main code method.
 
         }
 
         health = Mathf.Max(health-damage, 0); // If more damage is dealt by the projectile on the enemy or player, than the health, just set the health to zero. 
         onTakeDamage?.Invoke();
-        if (health == 0)
-        {
-            onDie?.Invoke(this, EventArgs.Empty);//Invoking an event. Asking Has this event been activated.
-
-
-        }
+        
 
         
     }

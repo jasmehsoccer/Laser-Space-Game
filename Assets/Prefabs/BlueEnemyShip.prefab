@@ -300,6 +300,7 @@ MonoBehaviour:
   s_hit_effect: {fileID: 8300000, guid: c7e572b255e311b479005985ed7f4ba2, type: 3}
   s_explosion_effect: {fileID: 8300000, guid: 3f5c01dd1e7789f45bff62bb48e39b4b, type: 3}
   enemySource: {fileID: -1757253887419790983}
+  enemySourceExplosion: {fileID: -1757253887419790983}
 --- !u!82 &-1757253887419790983
 AudioSource:
   m_ObjectHideFlags: 0
@@ -312,7 +313,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.602
   m_Pitch: 1
   Loop: 0
   Mute: 0
