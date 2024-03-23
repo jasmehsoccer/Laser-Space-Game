@@ -285,6 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hit_effect: {fileID: 4291740924240736112, guid: a6d0133f03d1ed34ab824e79960d6ece, type: 3}
   explosion_effect: {fileID: 0}
+  die_effect: {fileID: 6285654353283706297, guid: 630d2d960762cdb42868b7b25b6379db, type: 3}
 --- !u!114 &-5483888669032571607
 MonoBehaviour:
   m_ObjectHideFlags: 0
