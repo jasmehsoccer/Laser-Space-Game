@@ -24,7 +24,7 @@ public class Seffects : MonoBehaviour
 
     private void OnDisable()
     {
-        Health.onDie -= health_onDie;
+        Health.onDie -= health_onDie; // Unsubscribing from the event
     }
 
     private void health_onDie(object sender, EventArgs e)
