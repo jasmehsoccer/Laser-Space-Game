@@ -5,16 +5,18 @@ using System;
 
 public class Health : MonoBehaviour
 {
-    public static EventHandler onDie; // Observer pattern
+    public static EventHandler<bool> onDie; // Observer pattern
     public static event Action onTakeDamage;
     [SerializeField] private int MaxHealth = 25;
     [SerializeField] private int health;
+    private bool isAlive;
 
 
     // Start is called before the first frame update
     void Start()
     {
         health = MaxHealth;
+        isAlive = true;
     }
 
     // Update is called once per frame
@@ -24,10 +26,13 @@ public class Health : MonoBehaviour
     }
     public void DealDamage(int damage)
     {
-        if (health <= 0)
+        if (this.health <= 0)
         {
-            onDie?.Invoke(this, EventArgs.Empty);//Invoking an event. Asking Has this event been activated.
+            isAlive = false;
+            onDie?.Invoke(this, isAlive );//Invoking an event. Asking Has this event been activated.
             Destroy(gameObject);// Give control back to the main code method.
+
+
 
         }
 

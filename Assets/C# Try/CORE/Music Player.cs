@@ -8,11 +8,18 @@ public class MusicPlayer : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        setUpSingleton()
+        setUpSingleton();
     }
 
     private void setUpSingleton()
     {
-        if (FindAnyObjectByType (typeof(MusicPlayer)))  
+        if (FindObjectsOfType(GetType()).Length > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }

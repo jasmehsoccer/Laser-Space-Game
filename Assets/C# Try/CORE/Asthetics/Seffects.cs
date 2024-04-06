@@ -27,9 +27,17 @@ public class Seffects : MonoBehaviour
         Health.onDie -= health_onDie; // Unsubscribing from the event
     }
 
-    private void health_onDie(object sender, EventArgs e)
+    private void health_onDie(object sender, bool isAlive)
     {
-        play_sound_explosion_effect();
+        if (isAlive == true)
+        {
+            return;
+        }
+        else
+        {
+            play_sound_explosion_effect();
+        }
+        
     }
 
     public void play_sound_effect()

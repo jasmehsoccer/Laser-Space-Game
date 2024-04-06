@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class Veffects : MonoBehaviour
@@ -22,9 +23,17 @@ public class Veffects : MonoBehaviour
         Health.onDie -= health_onDie; // Unsubscribing from the event
     }
 
-    private void health_onDie(object sender, EventArgs e)
+    private void health_onDie(object sender, bool isAlive)
     {
-        play_die_effect();
+        if (isAlive == true)
+        {
+            return;
+        }
+        else
+        {
+            play_die_effect();  
+        }
+      
     }
 
     private void play_die_effect()
