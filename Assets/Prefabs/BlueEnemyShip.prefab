@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -1202825715435264409}
   - component: {fileID: -5483888669032571607}
   - component: {fileID: -1757253887419790983}
+  - component: {fileID: 3779750625807985826}
   m_Layer: 0
   m_Name: BlueEnemyShip
   m_TagString: Untagged
@@ -31,14 +32,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926477187695422611}
-  m_LocalRotation: {x: -0, y: -0, z: -0.00034529544, w: 0.99999994}
+  m_LocalRotation: {x: 0.99999994, y: 0.00034904052, z: -0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.04}
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: -0.04}
 --- !u!212 &926477187695422609
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -83,7 +84,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: 2b8dc303e0fba1a4588556f220936760, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 5, y: 5}
   m_AdaptiveModeThreshold: 0.5
@@ -398,3 +399,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3779750625807985826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926477187695422611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 313845087d68877408066791a28a9dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minTime: 0.2
+  maxTime: 3
+  enemyLaser: {fileID: 4962485087734151465, guid: dd23c64722644cb4e9a2a4bc6b38317a, type: 3}
+  projectileSpeed: -12
+  enemyLaserSoundEffect: {fileID: 8300000, guid: 9cc99277f231e4adbbd91ff1821f526b, type: 3}
+  enemyDeathSoundEffect: {fileID: 8300000, guid: 69445cce8a60f47a59a639a565185c15, type: 3}
+  enemyLaserSFX: 0.25
+  enemyExplosionSFX: 0.75
