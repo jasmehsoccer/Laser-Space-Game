@@ -43,7 +43,8 @@ public class Enemy : MonoBehaviour
 
     private void Fire()
     {
-        GameObject enemylaser = Instantiate(enemyLaser, transform.position, Quaternion.identity);
+        Quaternion new_rotation = new Quaternion(transform.rotation.x, 45f, transform.rotation.y, 1);
+        GameObject enemylaser = Instantiate(enemyLaser, transform.position, new_rotation);
         enemylaser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
         AudioSource.PlayClipAtPoint(enemyLaserSoundEffect, Camera.main.transform.position, enemyLaserSFX);
     }
