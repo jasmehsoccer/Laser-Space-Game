@@ -7,11 +7,12 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    float shotCounter = 0;
+    float shotCounter = 2;
     [SerializeField] float minTime = 0.2f;
     [SerializeField] float maxTime = 3f;
     [SerializeField] GameObject enemyLaser;
     [SerializeField] float projectileSpeed = -12;
+    [SerializeField] Transform spawnPoint;
 
     [Header("Audio")]
     [SerializeField] AudioClip enemyLaserSoundEffect;
@@ -57,7 +58,7 @@ public class Enemy : MonoBehaviour
         // this solution helps your code stay cleaner and easier to read, if you want to change the value it rotates without having
         // to come into your code over and over again, simply remove the magic value and replace it with a serialized float
         // so you multiply your vector by a variable you can change in the inspector. 
-        GameObject enemylaser = Instantiate(enemyLaser, transform.position, Quaternion.identity);
+        GameObject enemylaser = Instantiate(enemyLaser, spawnPoint.position, Quaternion.identity);
         enemylaser.transform.Rotate(Vector3.forward * -90f); 
         enemylaser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
         AudioSource.PlayClipAtPoint(enemyLaserSoundEffect, Camera.main.transform.position, enemyLaserSFX);
