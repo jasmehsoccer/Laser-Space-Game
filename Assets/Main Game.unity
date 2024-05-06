@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6003,7 +6003,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -6017,7 +6017,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 56.81, y: 1}
+  m_Size: {x: 62.6, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &1502145610
 MonoBehaviour:
@@ -6039,7 +6039,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502145608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09, y: -18.1, z: -0.07131954}
+  m_LocalPosition: {x: -6.9, y: -20.9, z: -0.07131954}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10924,7 +10924,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2070308445}
-  - component: {fileID: 2070308444}
+  - component: {fileID: 2070308446}
   m_Layer: 0
   m_Name: Enemy Spawner
   m_TagString: Untagged
@@ -10932,22 +10932,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2070308444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2070308443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74c734c40b4fd49878705fd4809bc5b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waveConfig:
-  - {fileID: 11400000, guid: d7ecaf02d3b577545a716206595c72ac, type: 2}
-  startWave: 0
-  looping: 0
 --- !u!4 &2070308445
 Transform:
   m_ObjectHideFlags: 0
@@ -10963,6 +10947,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2070308446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070308443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ca13d3106d0c44fb9cae036b5b611e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveConfig:
+  - {fileID: 11400000, guid: d7ecaf02d3b577545a716206595c72ac, type: 2}
+  startWave: 0
+  looping: 0
+  nextWaveCountdown: 5
 --- !u!1001 &989029624299342798
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11098,7 +11099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2816843780912540070, guid: 6ba2a2b2601aff848ac94429504852c9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.3738
+      value: -3.7
       objectReference: {fileID: 0}
     - target: {fileID: 2816843780912540070, guid: 6ba2a2b2601aff848ac94429504852c9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11257,6 +11258,10 @@ PrefabInstance:
     - target: {fileID: 6358264391354890928, guid: 630d2d960762cdb42868b7b25b6379db, type: 3}
       propertyPath: m_Name
       value: OnDie Effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6358264391354890928, guid: 630d2d960762cdb42868b7b25b6379db, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6805169796549220676, guid: 630d2d960762cdb42868b7b25b6379db, type: 3}
       propertyPath: m_RootOrder

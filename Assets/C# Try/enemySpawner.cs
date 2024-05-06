@@ -15,17 +15,17 @@ public class EnemySpawner : MonoBehaviour
     {
         do
         {
-           
+
             yield return StartCoroutine(SpawnAllWaves());
 
         }
         while (looping);
     }
 
-    
+
     private IEnumerator SpawnAllWaves()
     {
-        for (int waveIndex = 0; waveIndex < waveConfig.Count; waveIndex++) 
+        for (int waveIndex = 0; waveIndex < waveConfig.Count; waveIndex++)
         {
             var currentWave = waveConfig[waveIndex];
 
@@ -37,16 +37,22 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator SpawnAllEnemiesInWave(waveConfig currentWave)
     {
-        for (int enemyCounter = 0; enemyCounter <= currentWave.GetNumSpawn();enemyCounter++)
+        for (int enemyCounter = 0; enemyCounter < currentWave.GetNumSpawn(); enemyCounter++)
         {
-            if (enemyCounter == currentWave.GetNumSpawn())
+            
+            var newEnemy = Instantiate(currentWave.GetEnemyPrefab(), currentWave.GetWaypoint()[0].transform.position, Quaternion.identity);
+            newEnemy.GetComponent<EnemyPathing>().setWaveConfig(currentWave);
+
+            // moved this if check because order of operations was a bit wrong, we were never properly spawning the last enemy.
+            if (enemyCounter == currentWave.GetNumSpawn() - 1) // I just changed this to stop the extra enemy from 
+                                                               // spawning. the previous code where counter <= currentWave.GetNumSpawn() and this if statement before 
+                                                               // works fine. 
             {
                 Debug.Log("Starting Next Wave Timer");
+                Debug.Log(nextWaveCountdown);
                 yield return new WaitForSeconds(nextWaveCountdown);
             }
-            var newEnemy = Instantiate(currentWave.GetEnemyPrefab(), currentWave.GetWaypoint()[0].transform.position, Quaternion.identity) ;
-            newEnemy.GetComponent<EnemyPathing>().setWaveConfig(currentWave);
-            
+
             yield return new WaitForSeconds(currentWave.GetSpawnWait());
         }
     }

@@ -25,6 +25,6 @@ public class gameSession : MonoBehaviour
         int Score = 0;
         Score += (int)Time.fixedTime;
         usingText.text = Score.ToString();  
-        Debug.Log(Score);
+       // Debug.Log(Score);
     }
 }
