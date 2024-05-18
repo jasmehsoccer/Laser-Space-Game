@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class enemySpawner : MonoBehaviour
 {
     [SerializeField] List<waveConfig> waveConfig;
     [SerializeField] int startWave = 0;
