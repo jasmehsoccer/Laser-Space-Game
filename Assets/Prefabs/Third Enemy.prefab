@@ -261,6 +261,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-8937660816673318453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2657360112616661559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 313845087d68877408066791a28a9dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minTime: 0.2
+  maxTime: 3
+  enemyLaser: {fileID: 0}
+  projectileSpeed: -12
+  laserSpawnPoint: {fileID: 0}
+  enemyLaserSoundEffect: {fileID: 0}
+  enemyDeathSoundEffect: {fileID: 0}
+  enemyLaserSFX: 0.25
+  enemyExplosionSFX: 0.75
 --- !u!114 &3670185553225193703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,27 +336,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11e1f3113b6853f43bc1a743b248dcd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hit_effect: {fileID: 0}
-  explosion_effect: {fileID: 0}
-  die_effect: {fileID: 0}
---- !u!114 &-8937660816673318453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2657360112616661559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 313845087d68877408066791a28a9dc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minTime: 0.2
-  maxTime: 3
-  enemyLaser: {fileID: 0}
-  projectileSpeed: -12
-  spawnPoint: {fileID: 0}
-  enemyLaserSoundEffect: {fileID: 0}
-  enemyDeathSoundEffect: {fileID: 0}
-  enemyLaserSFX: 0.25
-  enemyExplosionSFX: 0.75
+  hit_effect: {fileID: 4291740924240736112, guid: a6d0133f03d1ed34ab824e79960d6ece, type: 3}
+  explosion_effect: {fileID: 4291740924240736112, guid: a6d0133f03d1ed34ab824e79960d6ece, type: 3}
+  die_effect: {fileID: 4291740924240736112, guid: a6d0133f03d1ed34ab824e79960d6ece, type: 3}

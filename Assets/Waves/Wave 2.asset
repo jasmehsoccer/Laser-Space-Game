@@ -17,4 +17,4 @@ MonoBehaviour:
   spawnWait: 3
   randomSpawn: 0.3
   numSpawn: 8
-  moveSpeed: 8
+  moveSpeed: 6

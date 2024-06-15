@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f99e0d467185145f7b9de52008836520, type: 3}
   m_Name: Wave 3
   m_EditorClassIdentifier: Assembly-CSharp::WaveConfig
-  enemyShip: {fileID: 926477187695422611, guid: 3850a918b82102f44adb64b301a4d46c, type: 3}
-  pathPrefab: {fileID: 8377629555677644070, guid: 0cc02a4c14b8fda4285fb2eecb4f8ecb, type: 3}
-  spawnWait: 3
+  enemyShip: {fileID: 2657360112616661559, guid: 0073ae291ea6ccf489835225089ceacd, type: 3}
+  pathPrefab: {fileID: 8377629555677644070, guid: 45dbd2c7fca6b344d929835aaca6b7f2, type: 3}
+  spawnWait: 6
   randomSpawn: 0.3
-  numSpawn: 8
+  numSpawn: 6
   moveSpeed: 8

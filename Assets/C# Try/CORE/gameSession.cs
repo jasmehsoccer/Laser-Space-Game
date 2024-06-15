@@ -12,10 +12,13 @@ using JetBrains.Annotations;
 
 public class gameSession : MonoBehaviour
 {
+    public static gameSession Instance { get; private set; }
 
     [SerializeField] private TextMeshProUGUI usingText;
     public float mainGameTimer {get; private set;}
     // Start is called before the first frame update
+
+    
     void Start()
     {
         
@@ -25,10 +28,11 @@ public class gameSession : MonoBehaviour
     void Update()
     {
         int Score = 0;
+        int mainGameTimer = 0;
         Score += (int)Time.fixedTime;
-        mainGameTimer += Time.unscaledTime;
+        mainGameTimer += (int)Time.fixedTime;
         usingText.text = Score.ToString();  
-       // Debug.Log(Score);
+        Debug.Log(mainGameTimer);
     }
 
     public float GetMainGameTimer() { 
