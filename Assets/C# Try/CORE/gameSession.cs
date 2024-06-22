@@ -12,6 +12,11 @@ using JetBrains.Annotations;
 
 public class gameSession : MonoBehaviour
 {
+
+    [SerializeField] float trigger_enter = 10f;
+    [SerializeField] bool looping = false;
+    bool isBossActive = false;
+    public static event EventHandler OnTriggerBoss;
     public static gameSession Instance { get; private set; }
 
     [SerializeField] private TextMeshProUGUI usingText;
@@ -31,8 +36,19 @@ public class gameSession : MonoBehaviour
         int mainGameTimer = 0;
         Score += (int)Time.fixedTime;
         mainGameTimer += (int)Time.fixedTime;
-        usingText.text = Score.ToString();  
-        Debug.Log(mainGameTimer);
+        usingText.text = Score.ToString();
+        Debug.Log("Current hidden time is: " + mainGameTimer);
+        if (mainGameTimer > trigger_enter)
+        {
+            isBossActive = !isBossActive;
+
+
+        }
+        if (isBossActive != false)
+        {
+            Debug.Log("Initiate Boss battle");
+        }
+        //Debug.Log(mainGameTimer);
     }
 
     public float GetMainGameTimer() { 

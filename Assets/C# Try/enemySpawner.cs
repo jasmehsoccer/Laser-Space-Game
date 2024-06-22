@@ -6,13 +6,13 @@ using UnityEngine;
 
 public class enemySpawner : MonoBehaviour
 {
-    public event EventHandler OnTriggerBoss;
+   
 
     [SerializeField] List<waveConfig> waveConfig;
     [SerializeField] int startWave = 0;
     [SerializeField] bool looping = false;
     [SerializeField] float nextWaveCountdown = 5f;
-    [SerializeField] float trigger_enter = 120f;
+    
     // Start is called before the first frame update
     // Make a blank C# class and create Character creator class: Write a message, "Please fill out form". Make a class called Character Creator. Make many private variables. Create getters and setters. Make a consructor. 
     IEnumerator Start()
@@ -41,18 +41,7 @@ public class enemySpawner : MonoBehaviour
 
     private void Update()
     {
-        if (gameSession.Instance.GetMainGameTimer() < trigger_enter) 
-        {
-            return;
         
-        }
-
-        else
-        {
-            looping = !looping;
-            OnTriggerBoss?.Invoke(this, EventArgs.Empty);
-            
-        }
     }
     private IEnumerator SpawnAllEnemiesInWave(waveConfig currentWave)
     {
