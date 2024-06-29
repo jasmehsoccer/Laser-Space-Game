@@ -10,12 +10,13 @@ public class BossFunction : MonoBehaviour
     void Start()
     {
         gameObject.SetActive(false);
-        
+        gameSession.OnTriggerBoss += bossEnter;
+
     }
 
     private void OnEnable()
     {
-        gameSession.OnTriggerBoss += bossEnter;
+        
     }
 
     private void bossEnter(object sender, System.EventArgs e)

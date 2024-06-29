@@ -15,6 +15,7 @@ public class gameSession : MonoBehaviour
 
     [SerializeField] float trigger_enter = 10f;
     [SerializeField] bool looping = false;
+    int count = 0;
     bool isBossActive = false;
     public static event EventHandler OnTriggerBoss;
     public static gameSession Instance { get; private set; }
@@ -37,16 +38,20 @@ public class gameSession : MonoBehaviour
         Score += (int)Time.fixedTime;
         mainGameTimer += (int)Time.fixedTime;
         usingText.text = Score.ToString();
-        Debug.Log("Current hidden time is: " + mainGameTimer);
-        if (mainGameTimer > trigger_enter)
+        //Debug.Log("Current hidden time is: " + mainGameTimer);
+        if (mainGameTimer > trigger_enter && count < 1)
         {
             isBossActive = !isBossActive;
+            count++;
 
 
         }
         if (isBossActive != false)
         {
-            Debug.Log("Initiate Boss battle");
+            //Debug.Log("Initiate Boss battle");
+            //Debug.Log("Initiate Boss battle");
+            OnTriggerBoss?.Invoke(this, EventArgs.Empty);
+            isBossActive = !isBossActive;
         }
         //Debug.Log(mainGameTimer);
     }
