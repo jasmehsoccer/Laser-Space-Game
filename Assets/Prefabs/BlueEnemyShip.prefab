@@ -416,7 +416,7 @@ MonoBehaviour:
   maxTime: 3
   enemyLaser: {fileID: 4962485087734151465, guid: dd23c64722644cb4e9a2a4bc6b38317a, type: 3}
   projectileSpeed: -12
-  laserSpawnPoint: {fileID: 0}
+  laserSpawnPoint: {fileID: 6901024445480728221}
   enemyLaserSoundEffect: {fileID: 8300000, guid: 9cc99277f231e4adbbd91ff1821f526b, type: 3}
   enemyDeathSoundEffect: {fileID: 8300000, guid: 69445cce8a60f47a59a639a565185c15, type: 3}
   enemyLaserSFX: 0.25

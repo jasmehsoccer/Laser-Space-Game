@@ -61,11 +61,11 @@ public class Enemy : MonoBehaviour
         CountdownandShoot();
         if (glitch_timer > 0){
 
-            glitch_timer -= Time.deltaTime;
+            glitch_timer -= Time.time;
             Debug.Log(glitch_timer);
 
         }
-        if (glitch_timer <= 0)
+        if (glitch_timer < 0)
         {
 
             Destroy(gameObject);
