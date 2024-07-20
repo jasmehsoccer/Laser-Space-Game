@@ -10904,7 +10904,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628407152}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 313845087d68877408066791a28a9dc4, type: 3}
   m_Name: 
@@ -10918,6 +10918,8 @@ MonoBehaviour:
   enemyDeathSoundEffect: {fileID: 0}
   enemyLaserSFX: 0.25
   enemyExplosionSFX: 0.75
+  glitch_material: {fileID: 0}
+  original_material: {fileID: 0}
 --- !u!114 &1628407157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16399,6 +16401,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2DScifiFrigateCorsairSideViewMasterPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 2657360112616661559, guid: 0073ae291ea6ccf489835225089ceacd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2659982952253113725, guid: 0073ae291ea6ccf489835225089ceacd, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -16455,6 +16461,10 @@ PrefabInstance:
     - target: {fileID: 1879809057243711256, guid: 78317a0a88637dc42932c3cf3f2d82a4, type: 3}
       propertyPath: m_Name
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879809057243711256, guid: 78317a0a88637dc42932c3cf3f2d82a4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1882018442821078192, guid: 78317a0a88637dc42932c3cf3f2d82a4, type: 3}
       propertyPath: m_RootOrder

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using Unity.IO.LowLevel.Unsafe;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -19,18 +20,56 @@ public class Enemy : MonoBehaviour
     [SerializeField] AudioClip enemyDeathSoundEffect;
     [SerializeField][Range(0, 1)] public float enemyLaserSFX = 0.25f;
     [SerializeField][Range(0, 1)] public float enemyExplosionSFX = 0.75f;
+    float glitch_timer = 0f;
+    [SerializeField] Material glitch_material;
+    [SerializeField] Material original_material;
+    private void Awake()
+    {
+        
+
+        if (TryGetComponent<SpriteRenderer>(out SpriteRenderer component))
+        {
+            original_material = component.material; 
+
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         shotCounter = UnityEngine.Random.Range(minTime, maxTime); // I added the UnityEngine. to clarify we are using Unitys Random
         // class from the Unity library but I think it was implicitly implied so it doesn't really make a difference. 
+        gameSession.OnTriggerBoss += GameSession_OnTriggerBoss;
+    }
+
+    private void GameSession_OnTriggerBoss(object sender, System.EventArgs e)
+    {
+        if (glitch_material != null)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().material = glitch_material;
+            glitch_timer = 5f;
+        }
+        else
+        {
+            return;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         CountdownandShoot();
+        if (glitch_timer > 0){
+
+            glitch_timer -= Time.deltaTime;
+            Debug.Log(glitch_timer);
+
+        }
+        if (glitch_timer <= 0)
+        {
+
+            Destroy(gameObject);
+        }
     }
 
     private void CountdownandShoot()

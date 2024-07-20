@@ -421,6 +421,8 @@ MonoBehaviour:
   enemyDeathSoundEffect: {fileID: 8300000, guid: 69445cce8a60f47a59a639a565185c15, type: 3}
   enemyLaserSFX: 0.25
   enemyExplosionSFX: 0.75
+  glitch_material: {fileID: 2100000, guid: c436e7df9a6f2dc42a6e4af253274d80, type: 2}
+  original_material: {fileID: 0}
 --- !u!1 &3150957779598342663
 GameObject:
   m_ObjectHideFlags: 0
