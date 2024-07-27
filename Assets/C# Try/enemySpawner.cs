@@ -21,11 +21,33 @@ public class enemySpawner : MonoBehaviour
         {
 
             yield return StartCoroutine(SpawnAllWaves());
+            
+
+
 
         }
         while (looping);
+
+      
+        
+
     }
 
+    private void Awake()
+    {
+        gameSession.OnTriggerBoss += GameSession_OnTriggerBoss;
+    }
+
+    private void GameSession_OnTriggerBoss(object sender, EventArgs e)
+    {
+        this.gameObject.SetActive(false);
+        
+    }
+
+    private void OnDisable()
+    {
+        gameSession.OnTriggerBoss-= GameSession_OnTriggerBoss;  
+    }
 
     private IEnumerator SpawnAllWaves()
     {
