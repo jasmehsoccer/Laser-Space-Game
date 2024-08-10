@@ -165,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7199927936915018281}
   m_Layer: 0
-  m_Name: BlueShipPath
+  m_Name: BlueShipPath 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

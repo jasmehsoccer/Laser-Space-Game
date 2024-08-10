@@ -2429,7 +2429,7 @@ GameObject:
   - component: {fileID: 1882018442821078192}
   - component: {fileID: -7856193384020770477}
   m_Layer: 0
-  m_Name: Second Enemy
+  m_Name: BossShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
