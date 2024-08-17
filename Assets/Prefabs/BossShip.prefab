@@ -2428,6 +2428,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1882018442821078192}
   - component: {fileID: -7856193384020770477}
+  - component: {fileID: 7877226626724767894}
   m_Layer: 0
   m_Name: BossShip
   m_TagString: Untagged
@@ -2488,6 +2489,21 @@ PolygonCollider2D:
       - {x: -0.5877852, y: -0.80901706}
       - {x: 0.58778536, y: -0.80901694}
       - {x: 4.7952867, y: 0.34187615}
+--- !u!114 &7877226626724767894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879809057243711256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90523026422533145aa347b56f51dac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyShip: {fileID: 0}
+  pathPrefab: {fileID: 8628492255426646900, guid: dcf67524e36fc484e9de26506f4c0bfe, type: 3}
+  moveSpeed: 2
 --- !u!1 &1879998241129673538
 GameObject:
   m_ObjectHideFlags: 0

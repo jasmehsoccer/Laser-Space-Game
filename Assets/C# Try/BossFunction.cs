@@ -6,27 +6,23 @@ using UnityEngine;
 
 public class BossFunction : MonoBehaviour
 {
-
-    [SerializeField] GameObject enemyShip;
     [SerializeField] GameObject pathPrefab;
     [SerializeField] float moveSpeed = 2f;
+
+    BossFunction bossFunction;
+    List<Transform> waypoint;
+    int waypointIndex = 0;
     // Start is called before the first frame update
 
 
     void Start()
     {
-        gameObject.SetActive(false);
+        gameObject.SetActive(true);
         gameSession.OnTriggerBoss += bossEnter;
-        waypoint = waveConfig.GetWaypoint();
-        transform.position = waypoint[waypointIndex].transform.position;
+        transform.position = pathPrefab.transform.GetChild(0).position; 
 
 
 
-    }
-
-    public GameObject GetEnemyPrefab()
-    {
-        return enemyShip;
     }
     public List<Transform> GetWaypoint()
     {
@@ -34,9 +30,9 @@ public class BossFunction : MonoBehaviour
 
         //var testWaypoint = new List<Transform>();
 
-        foreach (Transform position in pathPrefab.transform)
+        foreach (Transform transform in pathPrefab.transform)
         {
-            Waypoints.Add(position);
+            Waypoints.Add(transform);
 
 
         }
@@ -63,12 +59,10 @@ public class BossFunction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        move();
         
     }
-    BossFunction bossFunction;
-    List<Transform> waypoint;
-    int waypointIndex = 0;
+   
 
 
 
@@ -80,12 +74,12 @@ public class BossFunction : MonoBehaviour
 
     private void TravelToNextPoint()
     {
-        if (waypointIndex <= waypoint.Count - 1)
+        if (waypointIndex <= pathPrefab.transform.childCount - 1)
         {
-            var targetPosition = waypoint[waypointIndex].transform.position;// Used to set the destination for the ship
-            var movementThisFrame = waveConfig.GetMoveSpeed() * Time.deltaTime; // Used to make the framework consistent
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementThisFrame);// Move ship from current position to the next position at a certain speed.
-            if (transform.position == targetPosition) // Used to add to the Index to put ship on the next destination
+            var targetPosition = GetWaypoint();// Used to set the destination for the ship
+            var movementThisFrame = moveSpeed * Time.deltaTime; // Used to make the framework consistent
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition[waypointIndex].position, movementThisFrame);// Move ship from current position to the next position at a certain speed.
+            if (transform.position == targetPosition[waypointIndex].position) // Used to add to the Index to put ship on the next destination
             {
                 waypointIndex++; // can make a recursive call here 
             }
@@ -100,12 +94,6 @@ public class BossFunction : MonoBehaviour
         /*{
             Destroy(gameObject);
         }*/
-    }
-
-    public void setWaveConfig(waveConfig waveConfig)
-    {
-        this.waveConfig = waveConfig; // Sets wave config outside of this function to the waveConfig parameter. 
-
     }
 
     public float GetMoveSpeed()
