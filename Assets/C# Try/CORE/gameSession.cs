@@ -16,7 +16,7 @@ public class gameSession : MonoBehaviour
     [SerializeField] float trigger_enter = 10f;
     [SerializeField] bool looping = false;
     int count = 0;
-    bool isBossActive = false;
+    [SerializeField] bool isBossActive = false;
     public static event EventHandler OnTriggerBoss;
     public static gameSession Instance { get; private set; }
 

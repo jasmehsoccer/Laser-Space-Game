@@ -2501,7 +2501,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90523026422533145aa347b56f51dac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyShip: {fileID: 0}
   pathPrefab: {fileID: 8628492255426646900, guid: dcf67524e36fc484e9de26506f4c0bfe, type: 3}
   moveSpeed: 2
 --- !u!1 &1879998241129673538

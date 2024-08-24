@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
         if (glitch_timer > 0){
 
             glitch_timer -= Time.deltaTime;
-            Debug.Log(glitch_timer);
+            //Debug.Log(glitch_timer);
 
         }
         if (glitch_timer < 0)

@@ -18,7 +18,6 @@ public class BossFunction : MonoBehaviour
     void Start()
     {
         gameObject.SetActive(true);
-        gameSession.OnTriggerBoss += bossEnter;
         transform.position = pathPrefab.transform.GetChild(0).position; 
 
 
@@ -40,21 +39,13 @@ public class BossFunction : MonoBehaviour
         return Waypoints;
     }
 
-    private void OnEnable()
-    {
-        
-    }
-
     private void bossEnter(object sender, System.EventArgs e)
     {
-        gameObject.SetActive(true);
+        this.gameObject.SetActive(true);
         Debug.Log("Boss Fight");
     }
 
-    private void OnDisable()
-    {
-        gameSession.OnTriggerBoss -= bossEnter;
-    }
+    
 
     // Update is called once per frame
     void Update()
